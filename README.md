@@ -1,4 +1,4 @@
-# Praygrounds
+# Playgrounds
 
 <합법적 놀기 및 연구실 공부하기 신청서>
 
