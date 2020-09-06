@@ -69,14 +69,45 @@ mc()
 
 //28
 //Decision Tree
-for i in 1...4 {
-    moveForward()
-    if isOnGem {
-        solveRightSide()
-    }else if isOnClosedSwitch {
-        solveLeftSide()
-    }
+func solveLeft(){
+toggleSwitch()
+turnLeft()
+moveForward()
+collectGem()
+turnLeft()
+turnLeft()
+moveForward()
+turnLeft()
 }
+
+func solveRight(){
+collectGem()
+turnRight()
+moveForward()
+moveForward()
+moveForward()
+turnLeft()
+moveForward()
+collectGem()
+turnLeft()
+turnLeft()
+moveForward()
+turnRight()
+moveForward()
+moveForward()
+moveForward()
+turnRight()
+}
+
+for i in 1 ... 5 {
+moveForward()
+if isOnGem {
+solveRight()
+} else if isOnClosedSwitch [
+solveLeft()
+}
+}
+
 
 /*
  //<Hard Coding>
@@ -143,9 +174,77 @@ for i in 1...4 {
 }
  */
 
+//Logical Operators
 //29
-//
+//Using the NOT Operator
+for i in 1 ... 4 {
+    moveForward()
+    if isOnGem {
+        collectGem()
+    }
+    else if !isOnGem {
+        turnLeft()
+        moveForward()
+        moveForward()
+        collectGem()
+        turnLeft()
+        turnLeft()
+        moveForward()
+        moveForward()
+        turnLeft()
+    }
+}
+
+/*
+func check_Gem(){
+    if isOnGem{
+        collectGem()
+    }
+}
+
+for i in 1 ... 4 {
+    moveForward()
+    check_Gem()
+}
+
+
+if isBlocked{
+    turnLeft()
+    moveForward()
+    moveForward()
+    if isOnGem{
+        collectGem()
+    }
+    turnLeft()
+    turnLeft()
+    moveForward()
+    moveForward()
+    turnRight()
+}
+
+
+for i in 1 ... 2 {
+    moveForward()
+    if isOnGem{
+        collectGem()
+    }
+}
+ */
 
 //30
-//
+//Spiral of NOT
+func Blocked_Left(){
+    if isBlocked{
+        turnLeft()
+    }
+}
+
+
+for i in 1 ... 13 {
+    moveForward()
+    Blocked_Left()
+    if isOnClosedSwitch{
+        toggleSwitch()
+    }
+}
 
